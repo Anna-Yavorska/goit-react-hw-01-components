@@ -2,10 +2,11 @@ import user from '../data/user.json';
 import statistics from '../data/statistics.json'
 import friends from '../data/friends.json'
 import transactions from '../data/transactions.json'
-import { Profile } from './Profile';
-import { Statistics } from './Statistics';
-import { FriendList } from './FriendList';
-import { TransactionHistory } from './TransactionHistory';
+import { Profile } from './Profile/Profile';
+import { Statistics } from './Statistics/Statistics';
+import { FriendList } from './FriendsList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+import { GlobalStyle } from './GlobalStyle';
 
 export const App = () => {
   return (
@@ -15,10 +16,12 @@ export const App = () => {
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
+        stats={user.stats}
       />
       <Statistics title="Upload stats" stats={statistics} />
       <FriendList friends={friends} />
-      <TransactionHistory items={transactions}/>
+      <TransactionHistory items={transactions} />
+      <GlobalStyle />
     </div>
   );
 };
